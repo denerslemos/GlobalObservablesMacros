@@ -1,7 +1,7 @@
 #import "call_libraries.h"
 
 
-void HFCoincFilter_check(TString inputfile, TString outputfile){
+void HFCoincFilter_check(TString input_file, TString output_file){
 
 	using namespace std;
 
@@ -230,8 +230,8 @@ void HFCoincFilter_check(TString inputfile, TString outputfile){
 	}
 
 	// Open, write and close the output file
-	TFile *MyFile = new TFile(Form("%s", outputfile.c_str()), "RECREATE");
-	if(MyFile->IsOpen()) cout << "output file: " << outputfile.c_str() << endl;
+	TFile *MyFile = new TFile(Form("%s", output_file.Data()), "RECREATE");
+	if(MyFile->IsOpen()) cout << "output file: " << output_file.Data() << endl;
 	MyFile->cd();
 	MyFile->mkdir("centrality_histograms"); 
 	hist_hibin_all->Write();
