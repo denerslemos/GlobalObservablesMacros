@@ -48,6 +48,7 @@ void HFCoincFilter_check(TString input_file, TString output_file){
     hea_tree->SetBranchStatus("vz", 1);
     hea_tree->SetBranchAddress("vz", &vertexz);
     hea_tree->SetBranchStatus("hiHF_pfle", 1);
+    hea_tree->SetBranchAddress("hiHF_pfle", &hiHF_pfle);
     hea_tree->SetBranchStatus("nCountsHFPlus_pf", 1);
     hea_tree->SetBranchAddress("nCountsHFPlus_pf", &nCountsHFPlus_pf); 
     hea_tree->SetBranchStatus("nCountsHFMinus_pf", 1);
@@ -173,11 +174,12 @@ void HFCoincFilter_check(TString input_file, TString output_file){
 
 		hist_hibin_all->Fill(hiBin);
 
-		if(pprimaryVertexFilter != 1){hist_hibin_PV->Fill(hiBin);}
-		if(pclusterCompatibilityFilter != 1){hist_hibin_CC->Fill(hiBin);}
+		if(pprimaryVertexFilter == 1){hist_hibin_PV->Fill(hiBin);}
+		if(pclusterCompatibilityFilter == 1){hist_hibin_CC->Fill(hiBin);}
 
 		if(pprimaryVertexFilter != 1) continue;
 		if(pclusterCompatibilityFilter != 1) continue;
+
 		hist_hibin_PVCC->Fill(hiBin);
 
 		// Tower Maker
