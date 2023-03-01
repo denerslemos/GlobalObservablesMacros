@@ -39,28 +39,28 @@ void HFCoincFilter_check(TString input_file, TString output_file){
 	int numMinHFTower2, numMinHFTower3, numMinHFTower4, numMinHFTower5; // minimum number of towers (towermaker) between HF+ and HF- for thresholds 2, 3, 4 and 5 GeV
 
 	hea_tree->SetBranchStatus("*", 0); // disable all branches - this is important while reading big files
-    hea_tree->SetBranchStatus("pprimaryVertexFilter", 1);
-    hea_tree->SetBranchAddress("pprimaryVertexFilter", &pprimaryVertexFilter);    
-    hea_tree->SetBranchStatus("pclusterCompatibilityFilter", 1);
-    hea_tree->SetBranchAddress("pclusterCompatibilityFilter", &pclusterCompatibilityFilter);    
-    hea_tree->SetBranchStatus("hiBin", 1);
-    hea_tree->SetBranchAddress("hiBin", &hiBin);
-    hea_tree->SetBranchStatus("vz", 1);
-    hea_tree->SetBranchAddress("vz", &vertexz);
-    hea_tree->SetBranchStatus("hiHF_pfle", 1);
-    hea_tree->SetBranchAddress("hiHF_pfle", &hiHF_pfle);
+    	hea_tree->SetBranchStatus("pprimaryVertexFilter", 1);
+    	hea_tree->SetBranchAddress("pprimaryVertexFilter", &pprimaryVertexFilter);    
+    	hea_tree->SetBranchStatus("pclusterCompatibilityFilter", 1);
+   	hea_tree->SetBranchAddress("pclusterCompatibilityFilter", &pclusterCompatibilityFilter);    
+    	hea_tree->SetBranchStatus("hiBin", 1);
+    	hea_tree->SetBranchAddress("hiBin", &hiBin);
+    	hea_tree->SetBranchStatus("vz", 1);
+    	hea_tree->SetBranchAddress("vz", &vertexz);
+    	hea_tree->SetBranchStatus("hiHF_pfle", 1);
+    	hea_tree->SetBranchAddress("hiHF_pfle", &hiHF_pfle);
    	hea_tree->SetBranchStatus("nCountsHFPlus_pf", 1);
    	hea_tree->SetBranchAddress("nCountsHFPlus_pf", &nCountsHFPlus_pf); 
    	hea_tree->SetBranchStatus("nCountsHFMinus_pf", 1);
    	hea_tree->SetBranchAddress("nCountsHFMinus_pf", &nCountsHFMinus_pf); 
    	hea_tree->SetBranchStatus("numMinHFTower2", 1);
    	hea_tree->SetBranchAddress("numMinHFTower2", &numMinHFTower2);  
-    hea_tree->SetBranchStatus("numMinHFTower3", 1);
-    hea_tree->SetBranchAddress("numMinHFTower3", &numMinHFTower3);  
-    hea_tree->SetBranchStatus("numMinHFTower4", 1);
-    hea_tree->SetBranchAddress("numMinHFTower4", &numMinHFTower4);  
-    hea_tree->SetBranchStatus("numMinHFTower5", 1);
-    hea_tree->SetBranchAddress("numMinHFTower5", &numMinHFTower5);  
+    	hea_tree->SetBranchStatus("numMinHFTower3", 1);
+    	hea_tree->SetBranchAddress("numMinHFTower3", &numMinHFTower3);  
+    	hea_tree->SetBranchStatus("numMinHFTower4", 1);
+    	hea_tree->SetBranchAddress("numMinHFTower4", &numMinHFTower4);  
+    	hea_tree->SetBranchStatus("numMinHFTower5", 1);
+    	hea_tree->SetBranchAddress("numMinHFTower5", &numMinHFTower5);  
 
 	// make histograms needed (all hiBin)
 	TH1D *hist_hibin_all = new TH1D("hist_hibin_all","hist_hibin_all",201,0.0,201.0);
@@ -164,7 +164,7 @@ void HFCoincFilter_check(TString input_file, TString output_file){
 		if(numMinHFTower5 > 3){hist_hibin_HF4Th5->Fill(hiBin);}
 
 		// PF Candidates
-		double x3D[4]={(double)hiBin,(double)hiHF_pfle,(double)min(nCountsHFPlus_pf, nCountsHFMinus_pf)};
+		double x3D[3]={(double) hiBin,(double) hiHF_pfle,(double) min(nCountsHFPlus_pf, nCountsHFMinus_pf)};
 		hist_PF_hibin_vs_hiHFpfel_vs_minN->Fill(x3D);
 		
 	}
