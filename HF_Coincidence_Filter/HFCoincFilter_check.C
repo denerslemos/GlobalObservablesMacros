@@ -51,7 +51,7 @@ void HFCoincFilter_check(TString input_file, TString output_file){
     	hea_tree->SetBranchAddress("hiHF_pfle", &hiHF_pfle);
     	hea_tree->SetBranchStatus("nCountsHFPlus_pf", 1);
     	hea_tree->SetBranchAddress("nCountsHFPlus_pf", &nCountsHFPlus_pf); 
-   		hea_tree->SetBranchStatus("nCountsHFMinus_pf", 1);
+   	hea_tree->SetBranchStatus("nCountsHFMinus_pf", 1);
    	hea_tree->SetBranchAddress("nCountsHFMinus_pf", &nCountsHFMinus_pf); 
     	hea_tree->SetBranchStatus("numMinHFTower2", 1);
     	hea_tree->SetBranchAddress("numMinHFTower2", &numMinHFTower2);  
@@ -110,55 +110,10 @@ void HFCoincFilter_check(TString input_file, TString output_file){
 	hist_hibin_HF4Th5->Sumw2();
 
 	// from PF Candidates
-
-	TH1D *hist_hibin_PF1Th1 = new TH1D("hist_hibin_PF1Th1","hist_hibin_PF1Th1",201,0.0,201.0);
-	hist_hibin_PF1Th1->Sumw2();
-	TH1D *hist_hibin_PF2Th1 = new TH1D("hist_hibin_PF2Th1","hist_hibin_PF2Th1",201,0.0,201.0);
-	hist_hibin_PF2Th1->Sumw2();
-	TH1D *hist_hibin_PF3Th1 = new TH1D("hist_hibin_PF3Th1","hist_hibin_PF3Th1",201,0.0,201.0);
-	hist_hibin_PF3Th1->Sumw2();
-	TH1D *hist_hibin_PF4Th1 = new TH1D("hist_hibin_PF4Th1","hist_hibin_PF4Th1",201,0.0,201.0);
-	hist_hibin_PF4Th1->Sumw2();
-
-	TH1D *hist_hibin_PF1Th2 = new TH1D("hist_hibin_PF1Th2","hist_hibin_PF1Th2",201,0.0,201.0);
-	hist_hibin_PF1Th2->Sumw2();
-	TH1D *hist_hibin_PF2Th2 = new TH1D("hist_hibin_PF2Th2","hist_hibin_PF2Th2",201,0.0,201.0);
-	hist_hibin_PF2Th2->Sumw2();
-	TH1D *hist_hibin_PF3Th2 = new TH1D("hist_hibin_PF3Th2","hist_hibin_PF3Th2",201,0.0,201.0);
-	hist_hibin_PF3Th2->Sumw2();
-	TH1D *hist_hibin_PF4Th2 = new TH1D("hist_hibin_PF4Th2","hist_hibin_PF4Th2",201,0.0,201.0);
-	hist_hibin_PF4Th2->Sumw2();
-
-	TH1D *hist_hibin_PF1Th3 = new TH1D("hist_hibin_PF1Th3","hist_hibin_PF1Th3",201,0.0,201.0);
-	hist_hibin_PF1Th3->Sumw2();
-	TH1D *hist_hibin_PF2Th3 = new TH1D("hist_hibin_PF2Th3","hist_hibin_PF2Th3",201,0.0,201.0);
-	hist_hibin_PF2Th3->Sumw2();
-	TH1D *hist_hibin_PF3Th3 = new TH1D("hist_hibin_PF3Th3","hist_hibin_PF3Th3",201,0.0,201.0);
-	hist_hibin_PF3Th3->Sumw2();
-	TH1D *hist_hibin_PF4Th3 = new TH1D("hist_hibin_PF4Th3","hist_hibin_PF4Th3",201,0.0,201.0);
-	hist_hibin_PF4Th3->Sumw2();
-
-	TH1D *hist_hibin_PF1Th4 = new TH1D("hist_hibin_PF1Th4","hist_hibin_PF1Th4",201,0.0,201.0);
-	hist_hibin_PF1Th4->Sumw2();
-	TH1D *hist_hibin_PF2Th4 = new TH1D("hist_hibin_PF2Th4","hist_hibin_PF2Th4",201,0.0,201.0);
-	hist_hibin_PF2Th4->Sumw2();
-	TH1D *hist_hibin_PF3Th4 = new TH1D("hist_hibin_PF3Th4","hist_hibin_PF3Th4",201,0.0,201.0);
-	hist_hibin_PF3Th4->Sumw2();
-	TH1D *hist_hibin_PF4Th4 = new TH1D("hist_hibin_PF4Th4","hist_hibin_PF4Th4",201,0.0,201.0);
-	hist_hibin_PF4Th4->Sumw2();
-
-	TH1D *hist_hibin_PF1Th5 = new TH1D("hist_hibin_PF1Th5","hist_hibin_PF1Th5",201,0.0,201.0);
-	hist_hibin_PF1Th5->Sumw2();
-	TH1D *hist_hibin_PF2Th5 = new TH1D("hist_hibin_PF2Th5","hist_hibin_PF2Th5",201,0.0,201.0);
-	hist_hibin_PF2Th5->Sumw2();
-	TH1D *hist_hibin_PF3Th5 = new TH1D("hist_hibin_PF3Th5","hist_hibin_PF3Th5",201,0.0,201.0);
-	hist_hibin_PF3Th5->Sumw2();
-	TH1D *hist_hibin_PF4Th5 = new TH1D("hist_hibin_PF4Th5","hist_hibin_PF4Th5",201,0.0,201.0);
-	hist_hibin_PF4Th5->Sumw2();
 	
-	TH2D *hist_hibin_vs_hiHFpfel = new TH2D("hist_hibin_vs_hiHFpfel","hist_hibin_vs_hiHFpfel",201,0.0,201.0,2000,0.0,2000);
-	TH2D *hist_hiHFpfel_vs_minN = new TH2D("hist_hiHFpfel_vs_minN","hist_hiHFpfel_vs_minN",201,0.0,201.0,2000,0.0,2000);
-
+	TH3D *hist_PF_hibin_vs_hiHFpfel_vs_minN = new TH2D("hist_PF_hibin_vs_hiHFpfel_vs_minN","hist_PF_hibin_vs_hiHFpfel_vs_minN",201,0.0,201.0,5000,0.0,5000,200,0.0,200.0);
+	hist_PF_hibin_vs_hiHFpfel_vs_minN->Sumw2();
+	
 	// loop over events
 	int nevents = hea_tree->GetEntries(); // number of events
 	cout << endl;
@@ -207,33 +162,7 @@ void HFCoincFilter_check(TString input_file, TString output_file){
 		if(numMinHFTower5 > 3){hist_hibin_HF4Th5->Fill(hiBin);}
 
 		// PF Candidates
-		if(hiHF_pfle > 1 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 0){hist_hibin_PF1Th1->Fill(hiBin);}
-		if(hiHF_pfle > 1 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 1){hist_hibin_PF2Th1->Fill(hiBin);}
-		if(hiHF_pfle > 1 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 2){hist_hibin_PF3Th1->Fill(hiBin);}
-		if(hiHF_pfle > 1 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 3){hist_hibin_PF4Th1->Fill(hiBin);}
-
-		if(hiHF_pfle > 2 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 0){hist_hibin_PF1Th2->Fill(hiBin);}
-		if(hiHF_pfle > 2 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 1){hist_hibin_PF2Th2->Fill(hiBin);}
-		if(hiHF_pfle > 2 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 2){hist_hibin_PF3Th2->Fill(hiBin);}
-		if(hiHF_pfle > 2 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 3){hist_hibin_PF4Th2->Fill(hiBin);}
-
-		if(hiHF_pfle > 3 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 0){hist_hibin_PF1Th3->Fill(hiBin);}
-		if(hiHF_pfle > 3 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 1){hist_hibin_PF2Th3->Fill(hiBin);}
-		if(hiHF_pfle > 3 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 2){hist_hibin_PF3Th3->Fill(hiBin);}
-		if(hiHF_pfle > 3 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 3){hist_hibin_PF4Th3->Fill(hiBin);}
-
-		if(hiHF_pfle > 4 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 0){hist_hibin_PF1Th4->Fill(hiBin);}
-		if(hiHF_pfle > 4 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 1){hist_hibin_PF2Th4->Fill(hiBin);}
-		if(hiHF_pfle > 4 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 2){hist_hibin_PF3Th4->Fill(hiBin);}
-		if(hiHF_pfle > 4 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 3){hist_hibin_PF4Th4->Fill(hiBin);}
-
-		if(hiHF_pfle > 5 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 0){hist_hibin_PF1Th5->Fill(hiBin);}
-		if(hiHF_pfle > 5 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 1){hist_hibin_PF2Th5->Fill(hiBin);}
-		if(hiHF_pfle > 5 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 2){hist_hibin_PF3Th5->Fill(hiBin);}
-		if(hiHF_pfle > 5 && min(nCountsHFPlus_pf, nCountsHFMinus_pf) > 3){hist_hibin_PF4Th5->Fill(hiBin);}
-
-		hist_hibin_vs_hiHFpfel->Fill(hiBin,hiHF_pfle);
-		hist_hiHFpfel_vs_minN->Fill(min(nCountsHFPlus_pf, nCountsHFMinus_pf),hiHF_pfle);
+		hist_PF_hibin_vs_hiHFpfel_vs_minN->Fill(hiBin,hiHF_pfle,min(nCountsHFPlus_pf, nCountsHFMinus_pf));
 		
 	}
 
@@ -263,29 +192,9 @@ void HFCoincFilter_check(TString input_file, TString output_file){
 	hist_hibin_HF2Th5->Write();
 	hist_hibin_HF3Th5->Write();
 	hist_hibin_HF4Th5->Write();
-	//PFCandidates
-	hist_hibin_PF1Th1->Write();
-	hist_hibin_PF2Th1->Write();
-	hist_hibin_PF3Th1->Write();
-	hist_hibin_PF4Th1->Write();
-	hist_hibin_PF1Th2->Write();
-	hist_hibin_PF2Th2->Write();
-	hist_hibin_PF3Th2->Write();
-	hist_hibin_PF4Th2->Write();
-	hist_hibin_PF1Th3->Write();
-	hist_hibin_PF2Th3->Write();
-	hist_hibin_PF3Th3->Write();
-	hist_hibin_PF4Th3->Write();
-	hist_hibin_PF1Th4->Write();
-	hist_hibin_PF2Th4->Write();
-	hist_hibin_PF3Th4->Write();
-	hist_hibin_PF4Th4->Write();
-	hist_hibin_PF1Th5->Write();
-	hist_hibin_PF2Th5->Write();
-	hist_hibin_PF3Th5->Write();
-	hist_hibin_PF4Th5->Write();
 
-	hist_hibin_vs_hiHFpfel->Write();
+	//PFCandidates
+	hist_PF_hibin_vs_hiHFpfel_vs_minN->Write();
 
 	MyFile->Close();
 
